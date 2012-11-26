@@ -36,6 +36,8 @@ if (isset($_GET['rss'])) {
 
       $currentLog = array_reverse($currentLog);
 
+      $maxItems   = ($maxItems > $i) ? $i : $maxItems;
+
       for ($i = 0; $i < $maxItems; $i++) {
         $content .= "\n" . '  <item>';
         $content .= "\n" . '    <title>' . $currentLog[$i]['url'] . '</title>';
