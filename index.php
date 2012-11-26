@@ -8,11 +8,11 @@ include('includes/functions.php');
 if (isset($_GET['rss'])) {
   if (file_exists($cache) && time() < ((@filemtime($cache)) + $cacheDuration)) {
     if ($handle  = @fopen($cache, 'r')) {
-      $content = fread($handle, filesize($cache));
+      $rss = fread($handle, filesize($cache));
       fclose($handle);
   
       header('Content-type: application/rss+xml; charset=utf-8'); 
-      echo $content;
+      echo $rss;
     } else { echo 'Error: can not read cache file'; }
   } else {
     if ($handle = @fopen($logFile, 'r')) {
