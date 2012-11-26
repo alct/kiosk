@@ -1,5 +1,5 @@
 javascript:
-  
+
 function kiosk_closeBox() {
   var b = document.querySelector('#kiosk_box');
 

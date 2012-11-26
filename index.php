@@ -10,8 +10,8 @@ if (isset($_GET['rss'])) {
     if ($handle  = @fopen($cache, 'r')) {
       $rss = fread($handle, filesize($cache));
       fclose($handle);
-  
-      header('Content-type: application/rss+xml; charset=utf-8'); 
+
+      header('Content-type: application/rss+xml; charset=utf-8');
       echo $rss;
     } else { echo 'Error: can not read cache file'; }
   } else {
@@ -22,7 +22,7 @@ if (isset($_GET['rss'])) {
 
       $currentLog = array();
       $i          = 0;
-  
+
       while (($buffer = fgets($handle)) !== false) {
         $item = explode(' ', $buffer);
 
@@ -62,7 +62,7 @@ if (isset($_GET['rss'])) {
         fputs($handle, $rss);
         fclose($handle);
       } else { echo 'Error: can not write cache file'; }
-  
+
       header('Content-type: application/rss+xml; charset=utf-8');
       echo $rss;
     } else { echo 'Error: can not read log file'; }
@@ -99,7 +99,7 @@ if (isset($_GET['url']) && !empty($_GET['url'])
   <meta charset="utf-8" />
 
   <title>Kiosk</title>
-  
+
   <style>
     body {margin:0; font-family:Georgia, Times, serif; font-size:26px; text-align:center; color:#555; background-color:#fff}
     h1 {width:80%; margin:0 auto 15px auto; padding-bottom:1px; font-size:13px; text-align:center; font-weight:normal; color:#333; border-bottom:1px solid #ccc}
