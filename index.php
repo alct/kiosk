@@ -71,7 +71,9 @@ if (isset($_GET['rss'])) {
 
 // save url
 
-if (isset($_GET['url']) && !empty($_GET['url']) && !empty($_GET['key']) && isset($_GET['key']) && $decodedUrl = base64_decode($_GET['url'], true)) {
+if (isset($_GET['url']) && !empty($_GET['url'])
+ && isset($_GET['key']) && !empty($_GET['key'])
+ && $decodedUrl = base64_decode($_GET['url'], true)) {
   $url = htmlspecialchars($decodedUrl);
   $key = htmlspecialchars($_GET['key']);
 
