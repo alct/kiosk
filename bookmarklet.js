@@ -18,7 +18,7 @@ function kiosk_saveUrl() {
       u = window.btoa(document.location.href);
 
     i.setAttribute('id', 'kiosk_box');
-    i.setAttribute('style', 'position:fixed;left:10px;top:10px;z-index:999999999999999;width:168px;height:100px;border:3px solid #aaa;background:#fff');
+    i.setAttribute('style', 'position:fixed;left:10px;top:10px;z-index:999999999999999;overflow:hidden;width:168px;height:100px;border:3px solid #aaa;background:#fff');
     i.setAttribute('src', 'https://path/kiosk/?key=4b83c256a7ee37fef090378006304e15&url=' + u);
 
     document.body.appendChild(i);
