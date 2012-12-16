@@ -67,7 +67,7 @@ if ($socket = fsockopen($server, $port)) {
       }
 
       // command interception
-      if ($parts[1] == 'PRIVMSG' && substr($msg[2], 0, 4) == $cmd . ' ') {
+      if ($parts[1] == 'PRIVMSG' && substr($msg[2], 0, strlen($cmd) + 1) == $cmd . ' ') {
         $url = explode($cmd . ' ', $data, 2);
         $url = base64_encode(trim($url[1]));
 
