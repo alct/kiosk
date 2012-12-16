@@ -69,13 +69,4 @@ function cleanup_url($value) {
   return $value;
 }
 
-// url already saved?
-
-function in_log($value) {
-  $log   = @file_get_contents($GLOBALS['logFile']);
-  $value = str_replace(array('http://', 'https://', 'www.'), '', $value);
-
-  return (strpos($log, $value) === false) ? false : true;
-}
-
 ?>
